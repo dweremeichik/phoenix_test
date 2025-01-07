@@ -263,9 +263,10 @@ defmodule PhoenixTest.Live do
       type: mime_type
     }
 
-    upload_progress_result = session.view
-    |> file_input(form.selector, live_upload_name, [entry])
-    |> render_upload(file_name)
+    upload_progress_result =
+      session.view
+      |> file_input(form.selector, live_upload_name, [entry])
+      |> render_upload(file_name)
 
     session.view
     |> form(form.selector)

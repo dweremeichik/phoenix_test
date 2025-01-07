@@ -508,7 +508,9 @@ defmodule PhoenixTest.WebApp.IndexLive do
       <.live_file_input upload={@uploads.avatar} />
     </form>
 
-    <div :if={@upload_change_triggered} id="upload-change-result">phx-change triggered on file selection</div>
+    <div :if={@upload_change_triggered} id="upload-change-result">
+      phx-change triggered on file selection
+    </div>
 
     <form id="upload-redirect-form" phx-change="upload-change">
       <label for={@uploads.redirect_avatar.ref}>Redirect Avatar</label>
@@ -569,7 +571,7 @@ defmodule PhoenixTest.WebApp.IndexLive do
   end
 
   def handle_event("change-form", form_data, socket) do
-   {
+    {
       :noreply,
       socket
       |> assign(:form_saved, true)
@@ -764,8 +766,7 @@ defmodule PhoenixTest.WebApp.IndexLive do
   def handle_event("upload-change", _params, socket) do
     {
       :noreply,
-      socket
-      |> assign(:upload_change_triggered, true)
+      assign(socket, :upload_change_triggered, true)
     }
   end
 

@@ -800,7 +800,6 @@ defmodule PhoenixTest.LiveTest do
       end)
       |> assert_path("/live/page_2")
     end
-
   end
 
   describe "filling out full form with field functions" do
